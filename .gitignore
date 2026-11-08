@@ -1,10 +1,35 @@
-HELP.md
+# ---- Build output ----
 target/
-.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+build/
+out/
 
-### STS ###
+# ---- App data & logs (created at runtime) ----
+# H2 file database (spring.datasource.url=jdbc:h2:file:./database/Trx_database)
+database/
+*.mv.db
+*.trace.db
+# logging.file.name=./logs/budget-app.log
+logs/
+*.log
+
+# ---- Secrets / local overrides ----
+.env
+.env.*
+application.properties
+application-local.properties
+application-local.yml
+application-secret*.properties
+
+# ---- IntelliJ IDEA ----
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# ---- Eclipse / STS ----
 .apt_generated
 .classpath
 .factorypath
@@ -12,22 +37,20 @@ target/
 .settings
 .springBeans
 .sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
+# ---- NetBeans ----
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# ---- VS Code ----
 .vscode/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
